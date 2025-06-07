@@ -6,6 +6,7 @@ function TODOITEM(props) {
     
         <li>
             {props.task}
+            <button onClick={props.onDelete} style={{marginRight : '10px'}}> Delete</button>
         </li>
      
     </>

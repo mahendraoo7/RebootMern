@@ -2,6 +2,7 @@ import React from "react";
 import Welcome from "./welcome";
 import Counter from "./Counter";
 import Todo from "./to-do";
+import ToDOD from "./Delete";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Welcome name="Mahendra"/>
       <Welcome name="React Lerner"/>
       <Counter/>
-      <Todo/> 
+      <ToDOD/> 
     </div>
   );
 }
