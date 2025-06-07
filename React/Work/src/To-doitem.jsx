@@ -1,10 +1,14 @@
 import React from "react";
 
-function ToDoItem (props) {
-
-return  <li>
-       {props.task}
-    </li>
+function TODOITEM(props) {
+    
+    return <>
+    
+        <li>
+            {props.task}
+        </li>
+     
+    </>
 }
 
-export default ToDoItem
+export default TODOITEM

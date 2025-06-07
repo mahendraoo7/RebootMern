@@ -1,39 +1,46 @@
 import React, { useState } from "react";
-import ToDoItem from "./to-doitem";
+import TODOITEM from "./to-doitem";
 
-function TODO () {
+function Todo () {
 
     const [task , setTask] = useState("");
     const [tasks , setTasks] = useState([]);
 
-    
     const addTask = () => {
+        
+          if(task.trim("") !== "")
+          {
+             setTasks([...tasks , task]);
+             setTask("");
+          }
+    }
 
-        if(task.trim() !== "")
-            {
-                setTasks([...tasks , task]);
-                setTask(""); 
-            }
+    const Enter = (e) => {
+ 
+         if(e.key === 'Enter')
+         {
+            addTask();
+         }
+        
+    }
 
-        };
 
-return <>
-      
-         <h1>TODO list</h1>
-         <input type="text" value={task} onChange={(e) => setTask(e.target.value)}  placeholder="Enter a Task"/>
-         <button onClick={addTask}>Add</button>
+    return <>
+    
+         <h1>todo App</h1>
+         <input type="text" value={task} onChange={(e) => setTask(e.target.value)} placeholder="Enter the value" onKeyDown={Enter}/>
+         <button onClick={addTask} onKeyDown={Enter}> Add </button>
+        
 
          <ul>
-            {tasks.map((t,index) => (
-                
-             <ToDoItem key={index} task={t} />  
-         ))}
-
+            {
+                tasks.map((t,index) => (
+                    <TODOITEM key={index} task={t} />
+                ))
+            }
          </ul>
-          
     </>
 
 }
 
-
-export default TODO
+export default Todo

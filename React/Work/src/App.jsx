@@ -1,7 +1,7 @@
 import React from "react";
 import Welcome from "./welcome";
 import Counter from "./Counter";
-import TODO from "./to-do";
+import Todo from "./to-do";
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Welcome name="Mahendra"/>
       <Welcome name="React Lerner"/>
       <Counter/>
-      <TODO/> 
+      <Todo/> 
     </div>
   );
 }
